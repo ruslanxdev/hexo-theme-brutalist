@@ -1,0 +1,24 @@
+<article class="<%- class_name %>" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="<%- class_name %>__header">
+    <%- partial('_partial/post/title', { post: post, slug: slug, class_name: `${class_name}__title` }) %>
+    <div class="<%- class_name %>__meta">
+      <%- partial('_partial/post/date', { post: post, class_name: `${class_name}__date` }) %>
+      <%- partial('_partial/post/author', { post: post, class_name: `${class_name}__author` }) %>
+      <%- partial('_partial/post/tag') %>
+    </div>
+  </header>
+  <%- partial('_partial/post/gallery') %>
+  <div class="<%- class_name %>__body" itemprop="articleBody">
+    <% if (slug == 'index') { %>
+      <% if (post.excerpt) {%>
+        <%- post.excerpt %>
+      <% } %>
+      <p class="<%- class_name %>__more-link">
+        <a href="<%- url_for(post.path) %>"><%= __('more') %></a>
+      </p>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+  </div>
+</article>
+<%- partial('_partial/comments') %>

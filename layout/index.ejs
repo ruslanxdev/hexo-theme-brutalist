@@ -1,0 +1,44 @@
+<section class="description">
+  <% if (config.description) { %>
+    <%- markdown(config.description) %>
+  <% } %>
+  <% if (theme.customize.social_links) { %>
+    <p>
+      Find me on
+      <% const arr = Object.keys(theme.customize.social_links) %>
+      <% arr.forEach((value, i) => { %>
+        <% const sep = i < arr.length - 2 ? ", " : i == arr.length - 2 ? ` ${__('and')}` : "." %>
+        <% const url = theme.customize.social_links[value] %>
+        <a href="<%- url_for(url) %>" title="<%= i %>" target="_blank"><i class="fa fa-<%= value %>"></i></a><%- sep %>
+      <% }) %>
+    </p>
+  <% } %>
+</section>
+
+<section class="posts">
+  <h2><%= __('posts') %></h2>
+  <% if (theme.customize.show_all_posts) { %>
+    <% var showedPosts = page.posts.sort('date', 'desc') %>
+  <% } else { %>
+    <% var showedPosts = site.posts.sort('date', 'desc').limit(theme.customize.post_count || 5) %>
+  <% } %>
+  <% showedPosts.forEach((post, i) => { %>
+    <%- partial('_partial/post', { post: post, slug: 'index', class_name: 'post-item' }) %>
+  <% }); %>
+  <% if (theme.customize.show_all_posts) { %>
+    <%- partial('_partial/pagination') %>
+  <% } %>
+</section>
+
+<% if (site.data.projects) { %>
+<section class="projects">
+  <h2><a href="<%- url_for(theme.projects_url) %>"><%= __('projects') %></a></h2>
+  <ul class="project-list">
+    <% for(var obj in site.data.projects){ %>
+      <li class="project-item">
+        <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%= site.data.projects[obj].desc %>
+      </li>
+    <% } %>
+  </ul>
+</section>
+<% } %>

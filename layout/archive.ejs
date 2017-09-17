@@ -1,0 +1,26 @@
+<h1><%= __('archive_a') %></h1>
+<div class="archive">
+  <% sortedPosts = page.posts.sort('date', 'desc') %>
+  <% sortedPosts.forEach((post, i) => { %>
+    <% const postYear = Number(date(post.date, 'YYYY')) %>
+    <% const lastPostYear = sortedPosts[i - 1] ?
+      Number(date(sortedPosts[i - 1].date, 'YYYY')) :
+      postYear
+    %>
+    <% if (!i) { %>
+      <h2><%- postYear %></h2>
+      <ul class="post-list">
+    <% } %>
+    <% if (postYear !== lastPostYear) { %>
+      </ul>
+      <h2><%- postYear %></h2>
+      <ul class="post-list">
+    <% } %>
+    <li class="post-list__item">
+      <span><%- partial('_partial/post/date', { post: post, class_name: 'post-list__meta' }) %></span>
+      <span><%- partial('_partial/post/title', { post: post, slug: 'archive', class_name: '' }) %></span>
+    </li>
+  <% }); %>
+  </ul>
+  <%- partial('_partial/pagination') %>
+</div>

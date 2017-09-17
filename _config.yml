@@ -1,0 +1,39 @@
+menu:
+  Home: /
+  Archives: /archives/
+  About: /about/
+  GitHub: http://github.com/ruslangallo/hexo-theme-brutalist
+
+customize:
+  favicon:
+    # eg. generate with http://realfavicongenerator.net/
+    desktop:
+      url: /images/favicon-32x32.png
+      gravatar: false
+    android:
+      url: /images/favicon-196x196.png
+      gravator: false
+    apple:
+      url: /images/apple-touch-icon.png
+      gravator: false
+  social_links:
+    github: http://github.com/ruslangallo/hexo-theme-brutalist
+  show_all_posts: false
+  post_count: 5
+  highlight: github
+
+# RSS
+rss: false
+
+# Plugins
+plugins:
+  disqus_shortname: # Disqus Comments Shortname
+  google_analytics: # enter the tracking ID for your Google Analytics
+
+# Miscellaneous
+miscellaneous:
+  open_graph: # see http://ogp.me
+    fb_app_id:
+    fb_admins:
+    twitter_id:
+    google_plus:
