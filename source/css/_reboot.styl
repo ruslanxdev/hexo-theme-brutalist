@@ -27,16 +27,20 @@ h1
 
 h1, h2, h3, h4, h5, h6
   line-height: 1.1
+  margin: 1rem 0
+
+h4, h5, h6
+  font-size: inherit
 
 a
   color: $color-link
   text-decoration: none
 
 a:hover
-    text-decoration: underline
+  text-decoration: underline
 
 hr
-  border: 1px dashed $color-light
+  border: 1px solid $color-lightest
 
 strong
   font-weight: bold
@@ -62,9 +66,6 @@ small
 acronym, abbr
   border-bottom: 1px dotted
 
-ul, ol, dl
-  line-height: $line-height
-
 ul, ol
   ul, ol
     margin-top: 0
@@ -77,20 +78,21 @@ dt
   font-weight: bold
 
 table
+  border: 2px solid $color-lightest
   width: 100%
   font-size: $font-size-sm
   border-collapse: collapse
   text-align: left
+  margin: 1rem 0
 
 th
   font-weight: bold
-  color: $color-lightest
-  border-bottom: 1px dashed $color-light
+  border: 2px solid $color-lightest
   padding: 8px 8px
 
 td
-  border-bottom: none
-  padding: 9px 8px 0px 8px
+  border: 2px solid $color-lightest
+  padding: 8px
 
 pre
   font-family: $font-family-mono

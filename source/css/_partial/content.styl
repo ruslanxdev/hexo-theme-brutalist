@@ -13,6 +13,13 @@
 
   &__meta
     color: $color-light
+    margin-right: 1rem
+
+    a
+      color: inherit
+
+      &.tag-link::before
+        content: '#'
 
   &__body
     img, video
@@ -37,102 +44,71 @@
         margin-top: 0
 
     blockquote
-      background: inherit;
-      color: #ccffb6
-      border-left: 0px solid #ccc;
-      margin: 1rem 10px;
-      padding: 0.5em 10px;
+      font-size: $font-size-lg
+      color: $color-accent
+      margin: 1rem 0
+      padding: 0 1rem
       quotes: "\201C""\201D""\2018""\2019"
 
       p
         margin: 0
 
-      &:before
-        color: #ccffb6;
-        content: "\201C";
-        font-size: 2em;
-        line-height: 0.1em;
-        margin-right: 0.25em;
-        vertical-align: -0.4em
-
       footer
-        color: #666
-        font-size: 11px
-        margin: line-height 0
+        color: $color-light
+        font-size: $font-size-sm
+        margin: 10px 0
 
         a
-          color: #666
-          background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666)
+          color: $color-light
 
         a:hover
           color: #999
-          background-image: linear-gradient(transparent, transparent 4px, #999 4px, #999)
 
         cite
           &:before
             content: "—"
             padding: 0 0.5em
 
-    .pullquote
-      text-align: left
-      width: 45%
-      margin: 0
+      &.pullquote
+        text-align: left
+        width: 45%
+        margin: 0
+        padding: 0 1rem 1rem
 
-      &.left
-        margin-left: 0.5em
-        margin-right: 1em
+        &.left
+          float: left
 
-      &.right
-        margin-right: 0.5em
-        margin-left: 1em
+        &.right
+          float: right
 
     .caption
       color: $color-light
       display: block
-      font-size: 0.9em
+      font-size: $font-size-sm
       margin-top: 0.5em
       position: relative
       text-align: center
 
-  &__meta
-    color: $color-lightest
-    margin-right: 1rem
-
-
-.post-tag
-  .tag-link
-    &:before
-      content: "#"
-
 .post-list
-	padding: 0
-
-	&__item
-		list-style-type: none
-		margin-left: 0
-		margin-bottom: 1rem
-
-	&__meta
-		color: $color-lightest
-		min-width: 100px
-		margin-right: 16px
+  padding: 0
 
 .post-item
-  margin-bottom: 2rem
-
-  &__header
-    margin-bottom: 1rem
-
-  &__title
-    margin-bottom: 0
-
-    a
-      color: inherit
-      
-    a:hover
-      text-decoration: none
+  list-style-type: none
+  margin-left: 0
+  margin-bottom: 1rem
 
   &__meta
-    color: $color-lightest
-    min-width: 100px
-    margin-right: 16px
+    display: inline-block
+    color: $color-light
+    margin-right: 1rem
+    vertical-align: top
+    width: 96px
+
+  &__body
+    display: inline-block
+    vertical-align: top
+    width: calc(100% - 121px)
+
+  &__excerpt
+    & > *:last-child
+      margin-bottom: 0

@@ -22,9 +22,11 @@
   <% } else { %>
     <% var showedPosts = site.posts.sort('date', 'desc').limit(theme.customize.post_count || 5) %>
   <% } %>
-  <% showedPosts.forEach((post, i) => { %>
-    <%- partial('_partial/post', { post: post, slug: 'index', class_name: 'post-item' }) %>
-  <% }); %>
+  <ul class="post-list">
+    <% showedPosts.forEach((post, i) => { %>
+      <%- partial('_partial/post-item', { post: post }) %>
+    <% }); %>
+  </ul>
   <% if (theme.customize.show_all_posts) { %>
     <%- partial('_partial/pagination') %>
   <% } %>
@@ -35,7 +37,7 @@
   <h2><a href="<%- url_for(theme.projects_url) %>"><%= __('projects') %></a></h2>
   <ul class="project-list">
     <% for(var obj in site.data.projects){ %>
-      <li class="project-item">
+      <li class="project-list__item">
         <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%= site.data.projects[obj].desc %>
       </li>
     <% } %>

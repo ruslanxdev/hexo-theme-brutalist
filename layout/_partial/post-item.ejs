@@ -1,0 +1,7 @@
+<li class="post-item">
+  <%- partial('_partial/post/date', { post: post, className: 'post-item__meta' }) %>
+  <span class="post-item__body">
+    <%- partial('_partial/post/title', { post: post, list: true, className: 'post-item__title' }) %>
+    <div class="post-item__excerpt"><%- post.excerpt %></div>
+  </span>
+</li>
