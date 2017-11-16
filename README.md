@@ -2,7 +2,7 @@
 
 A minimalistic and brutal [Hexo](http://hexo.io) theme for a personal website, inspired [Cactus Dark](https://probberechts.github.io/cactus-dark/) theme, [Brutalist Websites](http://brutalistwebsites.com/) and [GitHub Styleguide](https://github.com/styleguide).
 
-<!-- [Demo](https://ruslangallo.com/hexo-theme-brutalist/) -->
+<!-- [Demo](https://ruslankhh.com/hexo-theme-brutalist/) -->
 
 ## Summary
 
@@ -33,7 +33,7 @@ A minimalistic and brutal [Hexo](http://hexo.io) theme for a personal website, i
 1. In the `root` directory:
 
   ```bash
-  $ git clone https://github.com/ruslangallo/hexo-theme-brutalist.git themes/brutalist
+  $ git clone https://github.com/ruslankhh/hexo-theme-brutalist.git themes/brutalist
   $ npm install hexo-pagination --save
   ```
 
@@ -152,7 +152,7 @@ customize:
 
 ## Author
 
-[Ruslan Gallo](https://github.com/ruslangallo)
+[Ruslan Khusnetdinov](https://github.com/ruslankhh)
 
 ## License
 MIT
